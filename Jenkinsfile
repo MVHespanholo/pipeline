@@ -5,10 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo "construindo....."
-                sh '''
+                bat '''
                 cd comandos
-                ls
-                cat requisito
+                dir
+                type requisito
                 '''
                 echo "terminado"
             }
@@ -16,10 +16,10 @@ pipeline {
         stage('Test') {
             steps {
                 echo "testando"
-                sh '''
+                bat '''
                 cd comandos
-                ls
-                python3 olamundo.py   
+                dir
+                python olamundo.py   
                 '''
                 echo "teste completo"
             }
